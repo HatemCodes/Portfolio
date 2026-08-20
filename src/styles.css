@@ -1,5 +1,7 @@
 /* ---------------------------------------------------------------------------
    Design tokens
+   Every colour on the site comes from here. Changing --accent recolours
+   everything; the [data-theme="light"] block below is the light mode.
    --------------------------------------------------------------------------- */
 :root {
   --bg: #0a0b0d;
@@ -7,20 +9,71 @@
   --bg-raise-2: #14171c;
   --line: #21262e;
   --line-soft: #191d23;
-  --text: #e9ebef;
+  --line-hover: #2c333d;
+
+  --text: #e9ebef; /* headings, strong text */
+  --text-2: #d3d7de; /* body prose */
+  --text-3: #c4cad3; /* secondary prose, list items */
   --muted: #8b929e;
   --faint: #626a76;
+  --dim: #4e5661;
+
   --accent: #79e2c4;
+  --accent-hover: #8fe9cf;
   --accent-soft: rgba(121, 226, 196, 0.1);
   --accent-line: rgba(121, 226, 196, 0.28);
+  --accent-glow: rgba(121, 226, 196, 0.15);
+  --on-accent: #06211a;
+
+  --warn: #e0c879;
+  --warn-line: rgba(224, 200, 121, 0.28);
+  --warn-soft: rgba(224, 200, 121, 0.08);
+
+  --nav-bg: rgba(10, 11, 13, 0.78);
+  --hero-glow: rgba(121, 226, 196, 0.07);
+  --card-grad: linear-gradient(180deg, var(--bg-raise) 0%, rgba(16, 18, 22, 0.55) 100%);
 
   --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
 
   --wrap: 860px;
   --pad: 24px;
-
   --r: 10px;
+
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #fbfbfa;
+  --bg-raise: #ffffff;
+  --bg-raise-2: #f2f3f2;
+  --line: #e0e3e2;
+  --line-soft: #ebeeed;
+  --line-hover: #c9cfcd;
+
+  --text: #14171a;
+  --text-2: #2c3238;
+  --text-3: #3c434a;
+  --muted: #5b636c;
+  --faint: #7b838d;
+  --dim: #98a0a8;
+
+  --accent: #0d7a62;
+  --accent-hover: #0a6752;
+  --accent-soft: rgba(13, 122, 98, 0.07);
+  --accent-line: rgba(13, 122, 98, 0.24);
+  --accent-glow: rgba(13, 122, 98, 0.14);
+  --on-accent: #ffffff;
+
+  --warn: #8a6a12;
+  --warn-line: rgba(138, 106, 18, 0.26);
+  --warn-soft: rgba(138, 106, 18, 0.07);
+
+  --nav-bg: rgba(251, 251, 250, 0.82);
+  --hero-glow: rgba(13, 122, 98, 0.06);
+  --card-grad: linear-gradient(180deg, var(--bg-raise) 0%, rgba(255, 255, 255, 0.6) 100%);
+
+  color-scheme: light;
 }
 
 *,
@@ -54,6 +107,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 /* Subtle depth behind the hero, nothing more. */
@@ -62,11 +116,7 @@ body::before {
   position: fixed;
   inset: 0 0 auto 0;
   height: 620px;
-  background: radial-gradient(
-    900px 420px at 18% -8%,
-    rgba(121, 226, 196, 0.07),
-    transparent 70%
-  );
+  background: radial-gradient(900px 420px at 18% -8%, var(--hero-glow), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -113,7 +163,7 @@ a {
   z-index: 40;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(10, 11, 13, 0.78);
+  background: var(--nav-bg);
   border-bottom: 1px solid var(--line-soft);
 }
 
@@ -123,6 +173,13 @@ a {
   justify-content: space-between;
   gap: 16px;
   height: 58px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
 }
 
 .nav-mark {
@@ -160,6 +217,25 @@ a {
 .nav-links a:hover {
   color: var(--text);
   background: var(--bg-raise-2);
+}
+
+.theme-toggle {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg-raise-2);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.16s ease, border-color 0.16s ease;
+}
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent-line);
 }
 
 /* ---------------------------------------------------------------------------
@@ -215,7 +291,7 @@ p:last-child {
 
 .prose {
   max-width: 66ch;
-  color: #d3d7de;
+  color: var(--text-2);
 }
 
 /* ---------------------------------------------------------------------------
@@ -254,7 +330,7 @@ p:last-child {
 
 .hero-sub {
   font-size: clamp(1.02rem, 2.3vw, 1.14rem);
-  color: #cfd4dc;
+  color: var(--text-2);
   max-width: 58ch;
   margin: 0 0 30px;
   line-height: 1.6;
@@ -265,7 +341,7 @@ p:last-child {
   align-items: flex-start;
   gap: 10px;
   font-size: 14px;
-  color: #bfc6d0;
+  color: var(--text-3);
   background: var(--accent-soft);
   border: 1px solid var(--accent-line);
   border-radius: var(--r);
@@ -280,7 +356,7 @@ p:last-child {
   background: var(--accent);
   flex: none;
   margin-top: 7px;
-  box-shadow: 0 0 0 3px rgba(121, 226, 196, 0.15);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .hero-actions {
@@ -308,14 +384,14 @@ p:last-child {
 }
 .btn-primary {
   background: var(--accent);
-  color: #06211a;
+  color: var(--on-accent);
   border-color: var(--accent);
   font-weight: 500;
 }
 .btn-primary:hover {
-  background: #8fe9cf;
-  color: #06211a;
-  border-color: #8fe9cf;
+  background: var(--accent-hover);
+  color: var(--on-accent);
+  border-color: var(--accent-hover);
 }
 
 /* ---------------------------------------------------------------------------
@@ -342,12 +418,12 @@ p:last-child {
 .project {
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: linear-gradient(180deg, var(--bg-raise) 0%, rgba(16, 18, 22, 0.55) 100%);
+  background: var(--card-grad);
   overflow: hidden;
   transition: border-color 0.18s ease;
 }
 .project:hover {
-  border-color: #2c333d;
+  border-color: var(--line-hover);
 }
 .project.open {
   border-color: var(--accent-line);
@@ -402,9 +478,9 @@ p:last-child {
   background: var(--accent-soft);
 }
 .chip.progress {
-  color: #e0c879;
-  border-color: rgba(224, 200, 121, 0.28);
-  background: rgba(224, 200, 121, 0.08);
+  color: var(--warn);
+  border-color: var(--warn-line);
+  background: var(--warn-soft);
 }
 
 .project-meta {
@@ -415,7 +491,7 @@ p:last-child {
 }
 
 .project-summary {
-  color: #c9ced7;
+  color: var(--text-3);
   max-width: 64ch;
   margin: 0 0 16px;
   font-size: 15.5px;
@@ -472,7 +548,7 @@ p:last-child {
   font-weight: 500;
 }
 .detail-block p {
-  color: #c4cad3;
+  color: var(--text-3);
   font-size: 15.5px;
   max-width: 68ch;
   margin: 0;
@@ -564,7 +640,7 @@ p:last-child {
 }
 .role-when .type {
   display: block;
-  color: #4e5661;
+  color: var(--dim);
   margin-top: 4px;
 }
 
@@ -590,7 +666,7 @@ p:last-child {
   position: relative;
   padding-left: 18px;
   margin-bottom: 8px;
-  color: #c4cad3;
+  color: var(--text-3);
   font-size: 15px;
   max-width: 62ch;
 }
@@ -675,7 +751,7 @@ p:last-child {
   justify-content: space-between;
   gap: 12px;
   font-size: 14.5px;
-  color: #c4cad3;
+  color: var(--text-3);
   padding: 5px 0;
   border-bottom: 1px solid var(--line-soft);
 }
@@ -747,7 +823,7 @@ footer {
   padding: 26px 0 44px;
   font-family: var(--mono);
   font-size: 11.5px;
-  color: #4e5661;
+  color: var(--dim);
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -787,7 +863,7 @@ footer {
   }
   .nav-links a {
     font-size: 11.5px;
-    padding: 6px 7px;
+    padding: 6px 6px;
   }
   .hero-actions .btn,
   .contact-grid .btn {

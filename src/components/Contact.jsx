@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { contact } from "../content.js";
+import { contact, meta } from "../content.js";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -28,6 +28,9 @@ export default function Contact() {
           <button className="btn" type="button" onClick={copyEmail}>
             Copy address
           </button>
+          <a className="btn" href={meta.resume} download>
+            Resume (PDF)
+          </a>
           {contact.links.map((l) => (
             <a
               key={l.href}

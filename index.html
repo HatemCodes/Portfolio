@@ -1,9 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a0b0d" />
 
     <title>Hatem Chehade — Computer Science, University of Calgary</title>
     <meta
@@ -22,6 +21,24 @@
     <meta name="twitter:card" content="summary" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Applies the saved theme before first paint so there is no flash of the
+         wrong colour scheme. To follow the visitor's OS setting instead of
+         defaulting to dark, replace "dark" on the last line with:
+         (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark") -->
+    <script>
+      (function () {
+        var t = "dark";
+        try {
+          t = localStorage.getItem("theme") || "dark";
+        } catch (e) {}
+        document.documentElement.dataset.theme = t === "light" ? "light" : "dark";
+        var m = document.createElement("meta");
+        m.name = "theme-color";
+        m.content = t === "light" ? "#fbfbfa" : "#0a0b0d";
+        document.head.appendChild(m);
+      })();
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

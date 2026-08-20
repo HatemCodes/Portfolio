@@ -10,6 +10,8 @@ export const meta = {
     "Fourth-year CS student at the University of Calgary building systems where trust is the hard part: encryption, verification, and privacy-first design.",
   // Set this once you know your final URL, e.g. "https://hatemchehade.com"
   url: "https://hatemchehade.vercel.app",
+  // Lives in public/. Regenerate with: see resume/README-resume.md
+  resume: "/Hatem-Chehade-Resume.pdf",
 };
 
 export const hero = {
@@ -155,26 +157,29 @@ export const projects = [
 ];
 
 export const leadership = {
-  heading: "Leading and teaching",
+  heading: "Leading, coaching, teaching",
   intro:
     "The technical work is half of it. The other half is that I have spent years being the person who makes a process legible to someone else — under regulation, under quota, and one-on-one.",
+  intro2:
+    "HatemFit is where that is most deliberate. It is an online coaching practice I built and run myself: I write the nutrition and training programming, deliver it remotely, and run the check-in cycle that keeps someone honest between sessions. The measure of success is that a client eventually stops needing me — which is the same standard I would want applied to any documentation or onboarding I write.",
   proof: [
+    {
+      stat: "10+",
+      label: "online coaching clients",
+      note: "HatemFit: custom nutrition plans and training splits delivered remotely, with regular check-ins. Several clients have graduated to training independently.",
+    },
     {
       stat: "25",
       label: "person team co-managed",
-      note: "Promoted into leadership at ICM within two months and trained the floor.",
+      note: "Promoted into leadership at ICM within two months, then trained the floor and held it to target.",
     },
     {
       stat: "400+",
       label: "verified donations generated",
-      note: "Direct door-to-door outreach over a six-month contract.",
-    },
-    {
-      stat: "10+",
-      label: "coaching clients, several graduated",
-      note: "Multiple clients now train independently. That is the intended outcome.",
+      note: "Six months of direct door-to-door outreach.",
     },
   ],
+  link: { label: "hatemfit.com", href: "https://hatemfit.com" },
 };
 
 export const experience = [
@@ -234,7 +239,7 @@ export const education = {
   degree: "BSc, Computer Science",
   school: "University of Calgary — Faculty of Science",
   period: "Expected 2027",
-  gpa: "GPA 3.4",
+  gpa: "GPA 3.5",
   note: "I am deliberately extending my final year to make room for a co-op or internship term.",
   courseworkHeading: "Relevant coursework",
   coursework: [

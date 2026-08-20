@@ -1,4 +1,4 @@
-import { hero, contact } from "../content.js";
+import { hero, contact, meta } from "../content.js";
 
 export default function Hero() {
   return (
@@ -17,6 +17,9 @@ export default function Hero() {
         <div className="hero-actions">
           <a className="btn btn-primary" href="#work">
             See the work
+          </a>
+          <a className="btn" href={meta.resume} download>
+            Resume (PDF)
           </a>
           <a className="btn" href={`mailto:${contact.email}`}>
             Email me
