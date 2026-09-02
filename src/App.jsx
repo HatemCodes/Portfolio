@@ -1,35 +1,32 @@
+import { Routes, Route, Navigate } from "react-router-dom";
 import Nav from "./components/Nav.jsx";
-import Hero from "./components/Hero.jsx";
-import Thesis from "./components/Thesis.jsx";
-import Projects from "./components/Projects.jsx";
-import Leadership from "./components/Leadership.jsx";
-import Experience from "./components/Experience.jsx";
-import Education from "./components/Education.jsx";
-import Skills from "./components/Skills.jsx";
-import Contact from "./components/Contact.jsx";
-import { contact } from "./content.js";
+import Footer from "./components/Footer.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Projects from "./pages/Projects.jsx";
+import Experience from "./pages/Experience.jsx";
+import Contact from "./pages/Contact.jsx";
 
 export default function App() {
   return (
     <>
-      <a className="skip" href="#work">
-        Skip to work
+      <a className="skip" href="#main">
+        Skip to content
       </a>
+      <ScrollToTop />
       <Nav />
-      <main>
-        <Hero />
-        <Thesis />
-        <Projects />
-        <Leadership />
-        <Experience />
-        <Education />
-        <Skills />
-        <Contact />
+      <main id="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
-      <footer className="wrap">
-        <span>© {new Date().getFullYear()} Hatem Chehade</span>
-        <span>{contact.location}</span>
-      </footer>
+      <Footer />
     </>
   );
 }

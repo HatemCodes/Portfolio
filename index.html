@@ -1,41 +1,39 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Hatem Chehade — Computer Science, University of Calgary</title>
+    <title>Hatem Chehade — Computer Science Student & Builder</title>
     <meta
       name="description"
-      content="Fourth-year CS student at the University of Calgary building systems where trust is the hard part: encryption, verification, and privacy-first design."
+      content="Fourth-year CS student at the University of Calgary. Security, privacy, and products built for the people the internet usually ignores."
     />
     <meta name="author" content="Hatem Chehade" />
 
-    <!-- Open Graph / link previews (LinkedIn, Slack, iMessage) -->
+    <!-- Link previews (LinkedIn, Slack, iMessage) -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Hatem Chehade — Computer Science, University of Calgary" />
+    <meta property="og:title" content="Hatem Chehade — Computer Science Student & Builder" />
     <meta
       property="og:description"
-      content="Encryption, verification, and privacy-first design. Fourth-year CS at the University of Calgary."
+      content="I build software people can actually trust. Security, privacy, and products for the people the internet usually ignores."
     />
+    <meta property="og:image" content="/hatem.jpg" />
     <meta name="twitter:card" content="summary" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-    <!-- Applies the saved theme before first paint so there is no flash of the
-         wrong colour scheme. To follow the visitor's OS setting instead of
-         defaulting to dark, replace "dark" on the last line with:
-         (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark") -->
+    <!-- Applies the saved theme before first paint, so there is no flash. -->
     <script>
       (function () {
-        var t = "dark";
+        var t = "light";
         try {
-          t = localStorage.getItem("theme") || "dark";
+          t = localStorage.getItem("theme") || "light";
         } catch (e) {}
-        document.documentElement.dataset.theme = t === "light" ? "light" : "dark";
+        document.documentElement.dataset.theme = t === "dark" ? "dark" : "light";
         var m = document.createElement("meta");
         m.name = "theme-color";
-        m.content = t === "light" ? "#fbfbfa" : "#0a0b0d";
+        m.content = t === "dark" ? "#131218" : "#fffdf8";
         document.head.appendChild(m);
       })();
     </script>
@@ -43,7 +41,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>

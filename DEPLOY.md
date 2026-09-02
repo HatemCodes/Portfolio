@@ -82,6 +82,23 @@ git push
 Pull requests get their own preview URLs, which is handy if you want to see a
 change live before it hits the real site.
 
+## A note on the multi-page routing
+
+The site now has real pages (`/about`, `/projects`, …) served by React Router.
+That means the browser can ask Vercel for a URL that isn't a real file on disk —
+for example when someone opens `hatemchehade.vercel.app/projects` directly, or
+refreshes while on it. Without configuration that returns a 404.
+
+`vercel.json` in the project root fixes it:
+
+```json
+{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
+```
+
+Every request gets `index.html`, and React Router works out which page to show.
+**Don't delete that file** — the site will appear to work fine when you click
+around, and 404 the moment anyone shares a deep link or hits refresh.
+
 ## Step 3 — Pointing a domain at it (whenever you buy one)
 
 1. Buy the domain. Cloudflare Registrar sells at cost and is usually cheapest;
