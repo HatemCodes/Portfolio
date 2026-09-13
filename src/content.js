@@ -9,7 +9,7 @@
 export const meta = {
   title: "Hatem Chehade — Computer Science Student & Builder",
   description:
-    "Fourth-year CS student at the University of Calgary. Security, privacy, and products built for people the internet usually ignores.",
+    "Fourth-year CS student at the University of Calgary and REWS co-op at Enbridge. I build software with security and privacy at the centre, and the process that keeps it running.",
   url: "https://hatemchehade.vercel.app",
   resume: "/Hatem-Chehade-Resume.pdf",
 
@@ -21,38 +21,41 @@ export const meta = {
 
 export const hero = {
   greeting: "Hi, I'm Hatem.",
-  headline: "I build software people can actually trust.",
-  sub: "Fourth-year Computer Science at the University of Calgary. I work on security, privacy, and products built for the people the internet usually ignores.",
+  // NOTE: the H1 is written directly in src/pages/Home.jsx so the highlight
+  // can wrap part of the line. Change it there, and keep this in sync.
+  headline: "I build things, and keep them running.",
+  sub: "Fourth-year Computer Science at the University of Calgary, currently a REWS co-op at Enbridge. I write software with security and privacy at the centre — and I'm the one who writes down the process so the next person doesn't have to guess.",
   location: "Calgary, Canada",
-  availability: "Looking for a co-op or internship term",
+  // Shown in the green pill at the top of the home page.
+  availability: "Currently: REWS Advisor Co-op at Enbridge",
 };
 
 export const stats = [
   { n: "3.5", l: "GPA" },
   { n: "4", l: "projects shipped" },
+  { n: "25", l: "person team co-managed" },
   { n: "10+", l: "people coached" },
-  { n: "3 yrs", l: "working while studying" },
 ];
 
 // Three cards on the home page.
 export const pillars = [
   {
     tone: "indigo",
-    title: "Security",
-    line: "Encryption I wrote myself, not imported.",
+    title: "Build",
+    line: "Software with security and privacy designed in, not bolted on.",
     link: "/projects",
   },
   {
-    tone: "coral",
-    title: "Verification",
-    line: "Tools that ask whether something deserves your belief.",
-    link: "/projects",
+    tone: "amber",
+    title: "Organise",
+    line: "Plans, trackers and governance that hold up when things move fast.",
+    link: "/experience",
   },
   {
     tone: "green",
-    title: "Privacy by design",
-    line: "Products that protect people before they think to ask.",
-    link: "/projects",
+    title: "Explain",
+    line: "Documentation and training that leaves the next person self-sufficient.",
+    link: "/about",
   },
 ];
 
@@ -149,10 +152,11 @@ export const projects = [
 ];
 
 export const about = {
-  lead: "I'm a fourth-year CS student in Calgary who likes building things that hold up.",
+  lead: "I like building things that hold up — and the unglamorous work that keeps them holding up.",
   paragraphs: [
     "I moved here from Lebanon and started most things over from the bottom. Building things became how I caught up.",
     "I plan everything. Courses, shifts, project milestones — mapped months ahead and written down rather than held in my head. It is how I hold a three-year job, a full course load, and several projects at once without dropping any of them.",
+    "That habit turned into a job. This fall I joined Enbridge as a REWS co-op, working on governance, project coordination, and reporting across their real estate and workplace services team: long-term work plans, project health checks, KPI dashboards, and the process guides sitting behind them. The posting asked for Civil Engineering, Business, or Project Management students — I got it as a CS student.",
     "And I'm usually the person people come to for help. I've trained pharmacy staff on systems where mistakes are a legal problem, co-managed a 25-person team, and coached more than ten people through their own training.",
   ],
   values: [
@@ -164,7 +168,7 @@ export const about = {
     {
       tone: "coral",
       title: "Plan it, then build it",
-      line: "Everything I run is written down before it starts. Structure is what lets me carry more than one thing.",
+      line: "Everything I run is written down before it starts — a schedule, a tracker, a plan. Structure is what lets me carry more than one thing at a time, in code and out of it.",
     },
     {
       tone: "green",
@@ -182,6 +186,18 @@ export const about = {
 export const experience = [
   {
     tone: "indigo",
+    role: "REWS Advisor — Co-op Student",
+    org: "Enbridge",
+    period: "Sep — Dec 2026",
+    meta: "Co-op · Calgary · Extension based on performance",
+    bullets: [
+      "Support governance, project coordination, data management, and operational planning across Real Estate & Workplace Services.",
+      "Maintain long-term work plans and track scheduling, budget, and progress across projects — including health checks on construction and renovation work.",
+      "Build KPI inputs, dashboards, and monthly reporting packages, and write the process documentation behind them: playbooks, RACI drafts, SharePoint pages, and how-to guides for recurring activities.",
+    ],
+  },
+  {
+    tone: "pink",
     role: "Pharmacy Assistant",
     org: "Shoppers Drug Mart",
     period: "Jun 2023 — Present",
@@ -232,7 +248,7 @@ export const education = {
   school: "University of Calgary, Faculty of Science",
   period: "Expected 2027",
   gpa: "GPA 3.5",
-  note: "I'm extending my final year on purpose, to make room for a co-op or internship term.",
+  note: "I'm extending my final year on purpose, to make room for co-op terms — starting with Enbridge this fall.",
   highlights: [
     { name: "Information Security & Privacy", grade: "A+" },
     { name: "Linear Methods", grade: "A+" },
@@ -261,11 +277,23 @@ export const skills = [
   { group: "Backend", items: ["Flask", "REST / CORS APIs", "JSON persistence"] },
   { group: "Security", items: ["RSA", "SHA-256", "Credential storage design"] },
   { group: "Tools", items: ["Git", "Unix / Linux shell"] },
+  {
+    group: "Ops & documentation",
+    items: [
+      "Excel",
+      "MS Office Suite",
+      "Project tracking & scheduling",
+      "KPI reporting & dashboards",
+      "Process documentation",
+      "RACI & governance records",
+      "SharePoint",
+    ],
+  },
 ];
 
 export const contact = {
   headline: "Let's talk.",
-  line: "I reply to everything. Email is the fastest way to reach me.",
+  line: "On co-op at Enbridge through December, and always happy to talk about what comes next. Email is the fastest way to reach me — I reply to everything.",
   email: "hatem.chehade@ucalgary.ca",
   location: "Calgary, Alberta",
   links: [

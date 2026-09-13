@@ -16,7 +16,7 @@ export default function Home() {
 
             <p className="hello">{hero.greeting}</p>
             <h1 className="h-xl">
-              I build software people can <span className="hl">actually trust</span>.
+              I build things, and <span className="hl">keep them running</span>.
             </h1>
             <p className="hero-sub">{hero.sub}</p>
 
@@ -59,11 +59,12 @@ export default function Home() {
       <section className="band band-alt">
         <div className="wrap">
           <Reveal>
-            <span className="kicker t-indigo">What I work on</span>
-            <h2 className="h-lg">Three ways of asking the same question.</h2>
+            <span className="kicker t-indigo">What I do</span>
+            <h2 className="h-lg">Three things, and they're connected.</h2>
             <p className="body-lg" style={{ marginTop: 20 }}>
-              Can this be relied on? It shows up in my projects as encryption, as
-              verification, and as privacy — but underneath it is one question.
+              Most of what I've worked on comes back to the same question: can this be
+              relied on? That's encryption in a password vault, and it's a process guide
+              that stops someone guessing. Same question, different layer.
             </p>
           </Reveal>
 
@@ -85,10 +86,11 @@ export default function Home() {
         <div className="wrap">
           <Reveal>
             <div className="cta">
-              <h2 className="h-lg">Looking for an intern who ships?</h2>
+              <h2 className="h-lg">Want to work together?</h2>
               <p>
-                I'm after a co-op or internship term and I'd rather talk than send
-                another cover letter into the void.
+                I'm on co-op at Enbridge through December and thinking about what comes
+                after. I'd rather have a conversation than send another cover letter into
+                the void.
               </p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
                 <Link className="btn btn-primary" to="/contact">

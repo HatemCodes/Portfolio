@@ -21,7 +21,7 @@ body{
   font-family:'Inter',system-ui,sans-serif;
   color:var(--ink);
   font-size:8.4pt;
-  line-height:1.28;
+  line-height:1.25;
   -webkit-print-color-adjust:exact;
   print-color-adjust:exact;
 }
@@ -42,7 +42,7 @@ h1{
   border-left:2px solid var(--accent);padding-left:9px;
 }
 
-section{ margin-top:7px; break-inside:auto; }
+section{ margin-top:6px; break-inside:auto; }
 h2{
   font-family:'JetBrains Mono',monospace;font-weight:500;
   font-size:7.5pt;letter-spacing:0.16em;text-transform:uppercase;
@@ -50,7 +50,7 @@ h2{
   border-bottom:1px solid var(--rule);
 }
 
-.entry{ margin-bottom:5px; break-inside:avoid; }
+.entry{ margin-bottom:4px; break-inside:avoid; }
 .entry:last-child{margin-bottom:0}
 .entry-head{
   display:flex;justify-content:space-between;align-items:baseline;gap:14px;
@@ -102,9 +102,9 @@ li:before{
     <span class="sep">&middot;</span>
     <a href="https://github.com/HatemCodes">github.com/HatemCodes</a>
   </p>
-  <p class="profile">Fourth-year Computer Science student working at the intersection of encryption,
-  verification, and privacy-first design, with three years of team leadership, staff training, and
-  coaching alongside the technical work.</p>
+  <p class="profile">Fourth-year Computer Science student and Enbridge REWS co-op, working across both
+  sides: security- and privacy-focused development, plus project coordination, governance, and reporting
+  inside a large enterprise. Three years of team leadership, staff training, and coaching alongside it.</p>
 </header>
 
 <section>
@@ -118,8 +118,8 @@ li:before{
     <p class="courses"><span class="lbl">Relevant coursework:</span> Information Security &amp; Privacy (A+),
     Network Systems Security, Thinking with Data (A), Professional Technical Communication (A),
     Information Technology Ethics (A), Intro to Software Engineering (A&minus;), Data Structures &amp;
-    Algorithm Analysis, Web-Based Systems, Software Analysis, Principles of Operating Systems,
-    Computing Machinery, Theoretical Foundations of CS I &amp; II, Linear Methods (A+).</p>
+    Algorithm Analysis, Web-Based Systems, Principles of Operating Systems, Theoretical Foundations of
+    CS I &amp; II, Linear Methods (A+).</p>
   </div>
 </section>
 
@@ -162,28 +162,29 @@ li:before{
     <p class="stack">Product research &middot; Planned: React (Vite), Flask, REST</p>
     <ul>
       <li>Designing a two-sided marketplace with modesty and privacy as first-class matching axes:
-      same-gender matching by default, photo-gated profiles, async text-first coaching, no public
-      progress feed.</li>
-      <li>Running beginner interviews, coach interviews, and a Calgary supply census before writing
-      code, since a same-gender-default marketplace fails without verified supply.</li>
+      same-gender matching by default, photo-gated profiles, text-first coaching, no public progress feed.
+      Running beginner interviews, coach interviews, and a Calgary supply census before writing code.</li>
     </ul>
   </div>
 
-  <div class="entry">
-    <div class="entry-head">
-      <span class="role">OMGame &mdash; Real-Time Chat &amp; Moderation</span>
-    </div>
-    <p class="stack">Java &middot; 25-person team</p>
-    <ul>
-      <li>Built the chat and moderation system inside a multiplayer game where every interface decision
-      propagated to two dozen contributors; prioritised integration discipline &mdash; stable interfaces,
-      small reviewable changes, and flagging breaking changes before they reached other developers.</li>
-    </ul>
-  </div>
 </section>
 
 <section>
   <h2>Experience</h2>
+
+  <div class="entry">
+    <div class="entry-head">
+      <span class="role">REWS Advisor, Co-op Student &mdash; Enbridge</span>
+      <span class="when">Sep &ndash; Dec 2026 &middot; Calgary, AB</span>
+    </div>
+    <ul>
+      <li>Support governance, project coordination, data management, and operational planning across Real
+      Estate &amp; Workplace Services; maintain long-term work plans and track scheduling, budget, and
+      progress, including health checks on construction and renovation projects.</li>
+      <li>Build KPI inputs, dashboards, and monthly reporting packages, and produce the documentation behind
+      them &mdash; playbooks, RACI drafts, SharePoint pages, and how-to guides for recurring activities.</li>
+    </ul>
+  </div>
 
   <div class="entry">
     <div class="entry-head">
@@ -193,8 +194,8 @@ li:before{
     <ul>
       <li>Process prescriptions, manage insurance claims, and maintain digital patient records in
       pharmacy management software under legal privacy obligations where accuracy is non-negotiable.</li>
-      <li>Trained new staff on systems and procedures; three-plus years with one employer while carrying
-      a full course load.</li>
+      <li>Trained new staff on systems and procedures; three-plus years with one employer while a
+      full-time student.</li>
     </ul>
   </div>
 
@@ -206,8 +207,7 @@ li:before{
     <ul>
       <li>Run an independent online coaching practice: custom nutrition plans and training programming
       for 10+ clients, delivered remotely with a structured check-in cycle.</li>
-      <li>Several clients have transitioned off structured coaching and continued training
-      independently &mdash; the intended outcome.</li>
+      <li>Several clients have since trained independently &mdash; the intended outcome.</li>
     </ul>
   </div>
 
@@ -244,6 +244,7 @@ li:before{
     <tr><td class="k">Backend</td><td>Flask, REST/CORS APIs, JSON persistence</td></tr>
     <tr><td class="k">Security</td><td>RSA encryption, SHA-256 hashing, credential storage design</td></tr>
     <tr><td class="k">Tooling</td><td>Git &amp; branching workflows, Unix/Linux shell scripting</td></tr>
+    <tr><td class="k">Ops</td><td>Excel, MS Office Suite, project tracking &amp; scheduling, KPI reporting, process documentation, RACI, SharePoint</td></tr>
   </table>
 </section>
 

@@ -8,7 +8,7 @@ export default function Experience() {
         <div className="wrap">
           <span className="kicker t-amber">Experience</span>
           <h1 className="h-lg" style={{ maxWidth: "18ch" }}>
-            Four jobs, one full course load, no dropped balls.
+            Five jobs, one full course load, nothing dropped.
           </h1>
         </div>
       </section>
